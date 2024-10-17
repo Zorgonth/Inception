@@ -13,7 +13,7 @@
 
 ## Overview
 
-The **Inception** project is part of the 42 curriculum, focusing on system administration and containerization. The goal of this project is to build a multi-container environment using Docker and Docker Compose. The services include a web server (Nginx), a relational database (MariaDB), and a dynamic content management system (WordPress). 
+The Inception project is part of the 42 curriculum, focusing on system administration and containerization. The goal of this project is to build a multi-container environment using Docker and Docker Compose. The services include a web server (Nginx), a relational database (MariaDB), and a dynamic content management system (WordPress). 
 
 This project emphasizes container orchestration, automation, and applying DevOps best practices for deploying and managing a small web infrastructure.
 
