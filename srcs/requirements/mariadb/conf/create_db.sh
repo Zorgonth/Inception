@@ -1,5 +1,10 @@
 #!bin/sh
 
+DB_NAME=$(cat /run/secrets/DB_NAME)
+DB_USER=$(cat /run/secrets/DB_USER)
+DB_PASS=$(cat /run/secrets/DB_PASS)
+DB_ROOT=$(cat /run/secrets/DB_ROOT)
+
 if [ ! -d "/var/lib/mysql/mysql" ]; then
 
         chown -R mysql:mysql /var/lib/mysql
@@ -32,3 +37,5 @@ EOF
         /usr/bin/mysqld --user=mysql --bootstrap < /tmp/create_db.sql
         rm -f /tmp/create_db.sql
 fi
+
+exec /usr/bin/mysqld --skip-log-error

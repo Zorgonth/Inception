@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   nginx:
@@ -34,6 +34,11 @@ services:
       - inception
     volumes:
       - db-volume:/var/lib/mysql
+    secrets:
+      - DB_NAME
+      - DB_USER
+      - DB_PASS
+      - DB_ROOT
     restart: always
 
   wordpress:
@@ -65,6 +70,22 @@ volumes:
       o: bind
       type: none
       device: /home/${USER}/data/mariadb
+
+secrets:
+  CERT_:
+    file: ./secrets/cert.txt
+  DB_NAME:
+    file: ./secrets/db_name.txt
+  DB_ROOT:
+    file: ./secrets/db_root.txt
+  DB_USER:
+    file: ./secrets/db_user.txt
+  DB_PASS:
+    file: ./secrets/db_pass.txt
+  KEY_:
+    file: ./secrets/key.txt
+  DOAMIN_NAME:
+    file: ./secrets/Domaine_name.txt
 
 networks:
     inception:
