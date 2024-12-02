@@ -33,18 +33,20 @@ inception/
 │   ├── docker-compose.yml
 │   ├── requirements/
 │   │   ├── mariadb/
-│   │   │   ├── 50-server.cnf
 │   │   │   ├── Dockerfile
-│   │   │   ├── db_init.sql
-│   │   │   └── script.sh
+│   │   │   └── conf/
+│   │   │       └── init_db.sh
 │   │   ├── nginx/
 │   │   │   ├── Dockerfile
 │   │   │   └── conf/
-│   │   │       └── default
+│   │   │       └── nginx.conf
+│   │   │       └── en.sh
 │   │   ├── wordpress/
-│   │       ├── Dockerfile
-│   │       ├── setup.sh
-│   │       └── wp-config.php
+│   │   │   ├── Dockerfile
+│   │   │   └── conf/
+│   │   │       └── wp-config-create.sh
+│   │   │   └── tools/
+│   │   │       └── make_dir.sh
 └── data/
     ├── mariadb/
     └── wordpress/
