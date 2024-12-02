@@ -1,4 +1,11 @@
 FROM alpine:3.16
-RUN	apk update && apk upgrade && apk add --no-cache nginx
+
+RUN apk update && apk upgrade && apk add --no-cache nginx openssl
+
+COPY ./requirements/nginx/tools/en.sh /en.sh
+
+RUN chmod +x /en.sh
+
 EXPOSE 443
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["/en.sh"]
