@@ -40,9 +40,9 @@ inception/
 │   │   │   ├── Dockerfile
 │   │   │   └── conf/
 │   │   │       └── nginx.conf
-|   |   |       └── en.sh
+│   │   │       └── en.sh
 │   │   ├── wordpress/
-│   │       ├── Dockerfile
+│   │   │   ├── Dockerfile
 │   │   │   └── conf/
 │   │   │       └── wp-config-create.sh
 │   │   │   └── tools/
