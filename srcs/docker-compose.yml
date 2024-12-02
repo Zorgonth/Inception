@@ -12,6 +12,8 @@ services:
       - "443:443"
     networks:
       - inception
+    env_file:
+      - .env
     volumes:
       - wp-volume:/var/www/
     restart: always
