@@ -2,9 +2,9 @@
 
 mkdir -p /etc/nginx/ssl/
 
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ${SSL_CERTIFICATE_KEY} -out ${SSL_CERTIFICATE} -subj "/C=US/ST=SomeState/L=SomeCity/O=SomeOrganization/CN=smallem.42.fr";
-mv  ${SSL_CERTIFICATE} /etc/nginx/ssl/;
-mv  ${SSL_CERTIFICATE_KEY} /etc/nginx/ssl/;
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ${KEY_} -out ${CERT_} -subj "/C=US/ST=SomeState/L=SomeCity/O=SomeOrganization/CN=sal-zuba.42.fr";
+mv  ${CERT_} /etc/nginx/ssl/;
+mv  ${KEY_} /etc/nginx/ssl/;
 
 echo "server {
 	listen			443 ssl;
@@ -13,8 +13,8 @@ echo "server {
 	root			/var/www/;
 	index			index.php index.html;
 
-	ssl_certificate		/etc/nginx/ssl/${SSL_CERTIFICATE};
-	ssl_certificate_key	/etc/nginx/ssl/${SSL_CERTIFICATE_KEY};
+	ssl_certificate		/etc/nginx/ssl/${CERT_};
+	ssl_certificate_key	/etc/nginx/ssl/${KEY_};
 	ssl_protocols		TLSv1.2 TLSv1.3;
 	ssl_session_timeout	10m;
 	keepalive_timeout	70;
